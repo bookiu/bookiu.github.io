@@ -65,24 +65,24 @@ paginatePath = "page"
 [menu]
   [[menu.main]]
     identifier = 'home'
-    name = 'Home'
+    name = '首页'
     url = '/'
     weight = 1
   [[menu.main]]
-    name = "Blog"
+    name = "归档"
     identifier = "blog"
     weight = 2
     url = "/posts.html"
   [[menu.main]]
-    name = "About"
+    name = "关于"
     identifier = "about"
     weight = 3
     url = "/about.html"
-  [[menu.main]]
-    name = "Tags"
-    identifier = "tags"
-    weight = 4
-    url = "/tags.html"
+  # [[menu.main]]
+  #   name = "标签"
+  #   identifier = "tags"
+  #   weight = 4
+  #   url = "/tags.html"
 
 # https://gohugo.io/content-management/taxonomies/#configure-taxonomies
 [taxonomies]

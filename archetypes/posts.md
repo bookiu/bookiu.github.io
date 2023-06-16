@@ -5,4 +5,3 @@ date: {{ .Date }}
 image: ""
 draft: true
 ---
-
