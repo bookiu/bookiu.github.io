@@ -1,0 +1,9 @@
+[[links]]
+  name = "twitter"
+  url = "https://twitter.com/0xinmu"
+  image = "images/social/twitter.svg"
+
+[[links]]
+  name = "github"
+  url = "https://github.com/norduo"
+  image = "images/social/github.svg"
