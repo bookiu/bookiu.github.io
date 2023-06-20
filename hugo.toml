@@ -86,13 +86,13 @@ paginatePath = "page"
 
 # https://gohugo.io/content-management/taxonomies/#configure-taxonomies
 [taxonomies]
-  category = 'categories'
-  series = 'series'
-  tag = 'tags'
+  category = "categories"
+  series = "series"
+  tag = "tags"
 
 # https://gohugo.io/content-management/urls/#tokens
 [permalinks]
-  posts = "/posts/:filename"
+  posts = "/posts/:slug"
   tags = '/tags/:title'
 
 # https://gohugo.io/templates/sitemap-template/#configuration
