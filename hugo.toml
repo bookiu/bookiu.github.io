@@ -2,7 +2,7 @@ title = "飞天大面包"
 languageCode = "zh-CN"
 baseURL = "https://kdefan.net"
 timeZone = "Asia/Shanghai"
-theme = "hugo-winston-theme"
+theme = "ghostwriter"
 
 uglyURLs = true
 
