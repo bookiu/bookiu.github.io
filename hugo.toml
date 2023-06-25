@@ -40,34 +40,8 @@ paginatePath = "page"
   rss = true
   headline = "飞天大面包"
   description = "为梦想添砖加瓦"
-
-  # params for theme hugo-winston-theme
-  AuthorName = "yaxin"
-  GitHubUser = "norduo"
-  Subtitle = "为梦想添砖加瓦"
-  google_analytics_id = "G-5PZT6MYW8X"
-  twitter_handle = ""
-  showAuthorOnHomepage =false
-  showAuthorOnPosts = false
-  showIntroContentOnHomepage = true
-  showPostsOnHomepage = true
-  usePaginationOnHomepage = false
-  limitPostsOnHomepage = 3 # only used if usePaginationOnHomepage is false
-  sortPostsByDateOldestFirst = false
-  addDot = false
-  addFrame = true
-  plausible_analytics_domain = "kdefan.net"
-  highlightColor = '#00a4ff'
-  baseColor = "#ffffff"
-  baseOffsetColor = "#eaeaea"
-  headingColor = "#1c1b1d"
-  textColor = "#4e5157"
-  dotColor = "#7b16ff"
-  enableGoogleFonts = true
-  googleFontsUrl = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
-  fontFamilyHeading = "Poppins"
-  fontFamilyParagraph = "Helvetica"
-  fontFamilyMonospace = "monospace"
+  mainSections = ["posts"]
+  intro = false
 
 [markup.goldmark.renderer]
   unsafe = true
