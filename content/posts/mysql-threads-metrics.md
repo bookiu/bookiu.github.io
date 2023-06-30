@@ -17,10 +17,7 @@ MySQL监控及优化中，线程相关指标是一个比较重要参数，可以
 | https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Threads_cached | The number of threads in the thread cache. |
 | https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Threads_connected | The number of currently open connections. |
 | https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Threads_running | The number of threads that are not sleeping. |
-| https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Threads_created | The number of threads created to handle connections. If https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Threads_created
- is big, you may want to increase the https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_cache_size
- value. The cache miss rate can be calculated as https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Threads_created
-/https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Connections |
+| https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Threads_created | The number of threads created to handle connections. If https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Threads_created is big, you may want to increase the https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_cache_size value. The cache miss rate can be calculated as https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Threads_created/https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Connections |
 | https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Connections | The number of connection attempts (successful or not) to the MySQL server. |
 | https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Max_used_connections | The maximum number of connections that have been in use simultaneously since the server started. |
 

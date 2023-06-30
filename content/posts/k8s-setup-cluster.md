@@ -18,7 +18,12 @@ draft: false
 
 我这里一共使用了三台机器，机器的IP及用户如下表：
 
-[Untitled Database](https://www.notion.so/9ef15b38ef9a4893a2e053ced092a74f?pvs=21)
+
+|IP|用途|
+| ---- | ---- |
+|9.134.66.137	|作为master机器|
+|9.134.111.254	|作为worker机器|
+|9.134.115.93	|作为worker机器|
 
 当然，你也可以只使用两台机器，一台master一台worker，不建议只使用一台机器，毕竟要搭建就搭建最真实的集群环境。
 
@@ -41,7 +46,11 @@ sysctl -w vm.swappiness=0
 
 因为使用`kubectl get nodes`默认看到的node名称均为主机名，所以为了方便识别这里分别对两台主机的主机名做配置。
 
-[Untitled Database](https://www.notion.so/d9d7b7955e95450d9354447218b1a5e6?pvs=21)
+|主机|IP|主机名|
+| ---- | ---- | ---- |
+|master	|9.134.66.137	|master01|
+|worker01|	9.134.111.254|	worker01|
+|worker02	|9.134.115.93	|worker02|
 
 配置主机名直接使用`hostnamectl`命令：
 
