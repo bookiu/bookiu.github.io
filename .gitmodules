@@ -6,7 +6,7 @@
     url = https://github.com/zerostaticthemes/hugo-winston-theme.git
 [submodule "themes/ghostwriter"]
     path = themes/ghostwriter
-    url = https://github.com/jbub/ghostwriter.git
+    url = https://github.com/bookiu/ghostwriter.git
 [submodule "themes/eureka"]
 	path = themes/eureka
 	url = https://github.com/wangchucheng/hugo-eureka.git
