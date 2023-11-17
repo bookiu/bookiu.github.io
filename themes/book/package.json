@@ -1,0 +1,19 @@
+{
+  "name": "hugo-theme-book",
+  "version": "1.0.0",
+  "description": "this is a hugo theme",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./tailwind.css -o ./assets/style.css",
+    "watch": "npx tailwindcss -i ./tailwind.css -o ./assets/style.css --watch"
+  },
+  "keywords": [
+    "hugo",
+    "theme"
+  ],
+  "author": "yaxin",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  }
+}

@@ -1,0 +1,14 @@
+name = "Book"
+license = "MIT"
+licenselink = "https://github.com/bookiu/hugo-theme-book/blob/master/LICENSE"
+description = "Hugo theme book is a blogging theme"
+
+homepage = "https://github.com/bookiu/hugo-theme-book"
+demosite = "https://hugo-theme-book.github.io"
+
+tags = ["blog", "minimal", "clean", "zerostatic"]
+features = ["blog"]
+
+[author]
+  name = "yaxin"
+  homepage = "https://kdefan.net"

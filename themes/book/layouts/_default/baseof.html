@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html{{ if .Site.Params.opengraph }} prefix="og: http://ogp.me/ns#"{{ end }}>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {{ $title := .Title | printf "%s - %s" .Site.Title }}
+    {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+    <title>{{ $title }}</title>
+    <link rel="icon" href="{{ .Site.BaseURL }}favicon.ico">
+    <link rel="canonical" href="{{ .Permalink }}" />
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="robots" content="index,follow">
+    {{ if .Site.Params.opengraph }}{{ partial "opengraph.html" . }}{{ end }}
+    {{ $styles := resources.Get "style.css" }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+</head>
+<body class="bg-sitebgc">
+    {{ partial "header.html" . }}
+
+    <div class="container mx-auto bg-white">
+    {{ block "main" . }}
+    {{ end }}
+    </div>
+
+    {{ partial "footer.html" . }}
+</body>
+</html>
