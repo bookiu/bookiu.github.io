@@ -3,8 +3,8 @@ title: "k8s中的存活和就绪检测"
 slug: k8s-liveness-readiness-config
 description: ""
 date: 2023-11-17T21:58:58+08:00
-tags: ['k8s', '云原生']
-category: ['devops']
+tags: ['kubernetes', '云原生']
+category: ['云原生']
 series: []
 image: ""
 draft: false

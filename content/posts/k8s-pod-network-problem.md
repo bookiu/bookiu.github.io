@@ -2,8 +2,8 @@
 title: Kuberbetes不同节点的Pod间无法通信问题处理
 slug: k8s-pod-network-problem
 date: 2021-04-28T16:09:00+08:00
-tags: ['kubernetes']
-categories: ['devops']
+tags: ['kubernetes', '云原生']
+category: ['云原生']
 series: []
 draft: false
 ---

@@ -2,8 +2,8 @@
 title: Kubernetes折腾记：部署应用
 slug: k8s-deploy-app
 date: 2021-01-30T22:17:00+08:00
-tags: ['docker', 'kubernetes', '容器']
-categories: ['devops']
+tags: ['kubernetes', '云原生']
+category: ['云原生']
 series: []
 draft: false
 ---
@@ -18,13 +18,13 @@ draft: false
 
 > 一个 Deployment 为 Pods 和 ReplicaSets 提供声明式的更新能力。
 你负责描述 Deployment 中的 目标状态，而 Deployment 控制器（Controller） 以受控速率更改实际状态， 使其变为期望状态。你可以定义 Deployment 以创建新的 ReplicaSet，或删除现有 Deployment， 并通过新的 Deployment 收养其资源。
-> 
+>
 
 2. pod
 
 > Pod 是可以在 Kubernetes 中创建和管理的、最小的可部署的计算单元。
 Pod （就像在鲸鱼荚或者豌豆荚中）是一组（一个或多个） 容器； 这些容器共享存储、网络、以及怎样运行这些容器的声明。 Pod 中的内容总是并置（colocated）的并且一同调度，在共享的上下文中运行。 Pod 所建模的是特定于应用的“逻辑主机”，其中包含一个或多个应用容器， 这些容器是相对紧密的耦合在一起的。 在非云环境中，在相同的物理机或虚拟机上运行的应用类似于 在同一逻辑主机上运行的云应用。
-> 
+>
 
 ![k8s-deploy-app/Untitled.png](k8s-deploy-app/Untitled.png)
 

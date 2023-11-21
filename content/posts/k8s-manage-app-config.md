@@ -3,7 +3,7 @@ title: 如何管理k8s应用的配置
 slug: k8s-manage-app-config
 description: ""
 date: 2023-11-20T18:54:35+08:00
-tags: ['kubernetes']
+tags: ['kubernetes', '云原生']
 category: ['云原生']
 series: []
 image: ""
