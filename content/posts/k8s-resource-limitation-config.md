@@ -63,7 +63,7 @@ k8s 对于内存资源的限制跟 CPU 大体相同，也是包含 `requests` �
 
 ![查看容器 cgroup 内存限制配置](./k8s-resource-limitation-config/03-container-cgroup-memory-limit.png)
 
-还有一种情况是如果容器内存占用超过了其申请，并且 Pod 所在的机器节点内存也不足，则该 Pod 很有可能会被驱逐。
+还有一种情况是如果容器内存占用超过了其申请大小，并且 Pod 所在的机器节点内存也不足，则该 Pod 很有可能会被驱逐。
 
 这里还有一个需要注意的点，`tmpfs` 类型的 `emptyDir` 存储占用的空间也会被算作容器的内存占用量。
 

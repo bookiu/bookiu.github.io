@@ -76,6 +76,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-      - name: Deploy to selfhost
-        id: selfhost
-        uses: df
