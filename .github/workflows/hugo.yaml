@@ -99,3 +99,8 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+      - name: Deploy to machines
+        run: |
+          url=${{ secrets.DEPLOY_SERVER_APIS }}
+          echo "Start to deploy to server: ${url}"
+          curl -H "Authorization: Bearer ${{ secrets.DEPLOY_TOKEN }}" "$url" -d '{"Image":"yaxin/blog-site:'${{ env.VERSION }}'"}'
