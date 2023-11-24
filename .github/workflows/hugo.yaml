@@ -82,8 +82,11 @@ jobs:
       - name: Docker build and push
         uses: docker/build-push-action@v5
         with:
+          context: .
           push: true
-          tags: yaxin/blog-site:${{ env.VERSION }}
+          tags: |
+            yaxin/blog-site:latest
+            yaxin/blog-site:${{ env.VERSION }}
 
   # Deployment job
   deploy:
