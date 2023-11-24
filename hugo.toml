@@ -49,12 +49,12 @@ paginatePath = "page"
 [markup.highlight]
   codeFences = true
   guessSyntax = false
-  hl_Lines = ""
-  lineNoStart = 1
   lineNos = false
+  lineNoStart = 1
   lineNumbersInTable = true
   noClasses = true
   tabWidth = 2
+  style = "monokai"
 
 [privacy.disqus]
   disable = false
