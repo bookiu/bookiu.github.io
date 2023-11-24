@@ -86,10 +86,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-      - name: Debug info
-        run: |
-          pwd
-          ls -al
       - name: Docker build and push
         uses: docker/build-push-action@v5
         with:
@@ -98,6 +94,8 @@ jobs:
           tags: |
             ${{ steps.build_version.outputs.VERSION_IMAGE }}
             ${{ steps.build_version.outputs.LATEST_IMAGE }}
+    outputs:
+      VERSION_IMAGE: ${{ steps.build_version.outputs.VERSION_IMAGE }}
 
   # Deployment job
   deploy:
@@ -112,7 +110,7 @@ jobs:
         uses: actions/deploy-pages@v2
       - name: Deploy to machines
         run: |
-          url=${{ secrets.DEPLOY_SERVER_APIS }}
-          image=${{ steps.build_version.outputs.VERSION_IMAGE }}
+          url="${{ secrets.DEPLOY_SERVER_APIS }}"
+          image="${{ needs.build.outputs.VERSION_IMAGE }}"
           echo "Start to deploy image ${image} to ${url}"
-          curl -v -H "Authorization: Bearer ${{ secrets.DEPLOY_TOKEN }}" "$url" -d '{"Image":"'${image}'"}'
+          curl -i -H "Authorization: Bearer ${{ secrets.DEPLOY_TOKEN }}" "$url" -d '{"Image":"'${image}'"}'
