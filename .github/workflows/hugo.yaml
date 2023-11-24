@@ -75,6 +75,10 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      - name: Debug info
+        run: |
+          pwd
+          ls -al
       - name: Docker build and push
         uses: docker/build-push-action@v5
         with:

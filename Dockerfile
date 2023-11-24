@@ -1,3 +1,3 @@
 FROM alpine
 
-COPY ./public/ /app/
+COPY public/ /app/
