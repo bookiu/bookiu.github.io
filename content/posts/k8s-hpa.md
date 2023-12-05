@@ -1,4 +1,13 @@
-# k8s中的HPA
+---
+title: k8s中的HPA
+slug: k8s-hpa
+date: 2023-12-05T21:49:00+08:00
+tags: ['kubernetes', '云原生']
+category: ['云原生']
+series: []
+draft: false
+---
+
 
 随着业务正常，请求量开始上涨，这导致业务服务器的 CPU 或内存使用率的增长或超过限制，引发业务接口出现问题，此时最好的办法就是增加服务器。k8s中可以将这一步骤简化为增加 Pod 数量，但是增加 Pod 也是需要手动进行操作的，是否有方法将这一行为自动化？答案就是HPA（Horizontal Pod Autoscaling）。
 
@@ -107,7 +116,7 @@ kind: HorizontalPodAutoscaler
 metadata:
   name: myapp-hpa
 spec:
-  # 选择目标负载 
+  # 选择目标负载
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
