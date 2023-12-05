@@ -116,7 +116,7 @@ kind: HorizontalPodAutoscaler
 metadata:
   name: myapp-hpa
 spec:
-  # 选择目标负载
+  # 选择目标负载 
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
