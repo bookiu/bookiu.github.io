@@ -2,5 +2,7 @@
     "yaml.schemas": {
         "https://json.schemastore.org/github-workflow.json": "*/.github/workflows/*.yaml"
     },
-    "python.defaultInterpreterPath": "python3"
+    "python.defaultInterpreterPath": "python3",
+    "[markdown]": {
+    }
 }

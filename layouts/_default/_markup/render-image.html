@@ -1,0 +1,12 @@
+{{- $caption := $.Text }}
+{{- if not (eq .Title "") }}
+    {{- $caption = $.Title }}
+{{- end }}
+{{ if not (eq $caption "") }}
+<figure>
+    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}">
+    <figcaption>{{ $caption | safeHTML }}</figcaption>
+</figure>
+{{ else }}
+<img src="{{ .Destination | safeURL }}" alt="{{ .Text }}">
+{{ end }}
