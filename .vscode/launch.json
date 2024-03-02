@@ -11,6 +11,14 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true
-        }
+        },
+        {
+            "name": "Sync Media",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/sync_media.py",
+            "console": "integratedTerminal",
+            "args": ["~/Downloads/feishu.docx/wireshark-usage.md"]
+        },
     ]
 }

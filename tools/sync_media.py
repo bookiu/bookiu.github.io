@@ -11,7 +11,7 @@ from urllib.parse import unquote
 import requests
 
 
-image_re = re.compile(r"(!\[(.*?)\]\((.*?)\)[\n\r]+(图\d+.*(?=\n)))", flags=re.MULTILINE)
+image_re = re.compile(r"(!\[(.*?)\]\((.*?)\)[\n\r]+(图\s*\d+.*(?=\n)))", flags=re.MULTILINE)
 image_desc_re = re.compile(r"^图(\d+)[.、：:\s]+(.*?)$")
 
 
@@ -188,7 +188,7 @@ def main():
                 raw_content = item[0]
                 alt = item[1]
                 image_url = item[2]
-                title = item[3]
+                title = item[3].replace("图 ", "图")
                 # 将 title 翻译为英文
                 media_name = translate(title)
                 media_ext = get_media_ext(image_url)
