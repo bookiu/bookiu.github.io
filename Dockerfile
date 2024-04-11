@@ -109,4 +109,6 @@ http {
 }
 EOF
 
+WORKDIR /app
+
 EXPOSE 80
