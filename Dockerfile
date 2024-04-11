@@ -16,7 +16,7 @@ RUN cd /app && \
 
 FROM nginx:1.25-alpine
 
-COPY --from=builder /app/public /app
+COPY --from=builder --chown=nginx:nginx /app/public /app
 
 RUN cat <<EOF > /etc/nginx/nginx.conf
 user                 nginx;
