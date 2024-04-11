@@ -3,7 +3,7 @@ FROM alpine:3.19 as builder
 ENV HUGO_VER=0.124.1
 
 RUN sed -i 's#dl-cdn.alpinelinux.org#mirrors.volces.com#g' /etc/apk/repositories && \
-    apk add --no-cache curl && \
+    apk add --no-cache curl tzdata && \
     curl -L "https://github.com/gohugoio/hugo/releases/download/v{$HUGO_VER}/hugo_${HUGO_VER}_linux-amd64.tar.gz" | tar zx -C /usr/local/bin/
 
 COPY . /app/
