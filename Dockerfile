@@ -56,9 +56,8 @@ http {
     gzip_types      text/plain text/css text/xml application/json application/javascript application/rss+xml application/atom+xml image/svg+xml;
 
     server {
-        listen      80;
-        listen      [::]:80;
-        server_name kdefan.net;
+        listen      80 default_server;
+        server_name _;
         root        /app;
         index       index.html;
 
@@ -109,3 +108,5 @@ http {
     }
 }
 EOF
+
+EXPOSE 80
