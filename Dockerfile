@@ -89,12 +89,12 @@ http {
         }
 
         # assets, media
-        location ~* \.(?:css(\.map)?|js(\.map)?|jpe?g|png|gif|ico|cur|heic|webp|tiff?|mp3|m4a|aac|ogg|midi?|wav|mp4|mov|webm|mpe?g|avi|ogv|flv|wmv)$ {
+        location ~* \.(?:css(\.map)?|js(\.map)?|jpe?g|png|gif|ico|cur|heic|webp|tiff?|mp3|m4a|aac|ogg|midi?|wav|mp4|mov|webm|mpe?g|avi|ogv|flv|wmv)\$ {
             expires 7d;
         }
 
         # svg, fonts
-        location ~* \.(?:svgz?|ttf|ttc|otf|eot|woff2?)$ {
+        location ~* \.(?:svgz?|ttf|ttc|otf|eot|woff2?)\$ {
             add_header Access-Control-Allow-Origin "*";
             expires    7d;
         }
@@ -105,7 +105,7 @@ http {
         listen      80;
         listen      [::]:80;
         server_name *.kdefan.net;
-        return      301 http://kdefan.net$request_uri;
+        return      301 http://kdefan.net\$request_uri;
     }
 }
 EOF
