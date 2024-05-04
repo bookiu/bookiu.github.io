@@ -109,9 +109,13 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-      - name: Deploy to machines
-        run: |
-          url="${{ secrets.DEPLOY_SERVER_APIS }}"
-          image="${{ needs.build.outputs.VERSION_IMAGE }}"
-          echo "Start to deploy image ${image} to ${url}"
-          curl -i -H "Authorization: Bearer ${{ secrets.DEPLOY_TOKEN }}" "$url" -d '{"Image":"'${image}'"}'
+      - name: Rsync deployments
+        uses: burnett01/rsync-deployments@7.0.1
+        with:
+          switches: -avzr --delete
+          path: ./public/
+          remote_host: ${{ secrets.DEPLOY_SERVER_HOST }}
+          remote_port: ${{ secrets.DEPLOY_SERVER_PORT }}
+          remote_user: ${{ secrets.DEPLOY_SERVER_USER }}
+          remote_key: ${{ secrets.DEPLOY_SERVER_KEY }}
+          remote_path: /kdefan.net/
