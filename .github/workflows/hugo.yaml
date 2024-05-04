@@ -109,7 +109,7 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
