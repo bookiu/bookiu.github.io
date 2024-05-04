@@ -112,10 +112,10 @@ jobs:
       - name: Rsync deployments
         uses: burnett01/rsync-deployments@7.0.1
         with:
-          switches: -avzr --delete
+          switches: -avzh --delete
           path: ./public/
           remote_host: ${{ secrets.DEPLOY_SERVER_HOST }}
           remote_port: ${{ secrets.DEPLOY_SERVER_PORT }}
           remote_user: ${{ secrets.DEPLOY_SERVER_USER }}
           remote_key: ${{ secrets.DEPLOY_SERVER_KEY }}
-          remote_path: /kdefan.net/
+          remote_path: /data/release/kdefan.net/
