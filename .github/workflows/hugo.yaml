@@ -115,6 +115,10 @@ jobs:
         with:
           name: github-pages
           path: ./public
+      - name: Unarchive artifact
+        run: |
+          tar -xzf ./public/artifact.tar -C ./public/
+          rm ./public/artifact.tar
       - name: Rsync deployments
         uses: burnett01/rsync-deployments@7.0.1
         with:
