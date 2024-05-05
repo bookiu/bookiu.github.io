@@ -1,4 +1,4 @@
-title = "Bookliu"
+title = "SRE Work"
 languageCode = "zh-CN"
 baseURL = "https://kdefan.net"
 timeZone = "Asia/Shanghai"
@@ -39,7 +39,7 @@ paginatePath = "page"
   # params for theme ghostwriter
   dateFormat = "2006-01-02"
   rss = true
-  headline = "飞天大面包"
+  headline = "SRE Work"
   description = "为梦想添砖加瓦"
   mainSections = ["posts"]
   intro = false
