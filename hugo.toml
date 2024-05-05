@@ -1,8 +1,8 @@
-title = "飞天大面包"
+title = "Bookliu"
 languageCode = "zh-CN"
 baseURL = "https://kdefan.net"
 timeZone = "Asia/Shanghai"
-theme = "ghostwriter"
+theme = "paper"
 copyright = ""
 googleAnalytics = "G-5PZT6MYW8X"
 disqusShortname = "kdefan"
@@ -10,6 +10,7 @@ pygmentsUseClasses = true
 pygmentsCodefences = true
 
 uglyURLs = true
+summaryLength = 10
 
 # directories
 archetypeDir = "archetypes"
@@ -43,18 +44,34 @@ paginatePath = "page"
   mainSections = ["posts"]
   intro = false
 
-[markup.goldmark.renderer]
-  unsafe = true
+[markup]
+  defaultMarkdownHandler = "goldmark"
 
-[markup.highlight]
-  codeFences = true
-  guessSyntax = false
-  lineNos = false
-  lineNoStart = 1
-  lineNumbersInTable = true
-  noClasses = true
-  tabWidth = 2
-  style = "monokai"
+  # [markup.highlight]
+  #   codeFences = true
+  #   guessSyntax = false
+  #   lineNos = false
+  #   lineNoStart = 1
+  #   lineNumbersInTable = true
+  #   noClasses = true
+  #   tabWidth = 2
+  #   style = "monokai"
+
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      linkifyProtocol = 'https'
+      strikethrough = true
+      table = true
+      taskList = true
+    [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [privacy.disqus]
   disable = false
