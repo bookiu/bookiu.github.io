@@ -23,7 +23,7 @@ draft: false
 
 集群中机器的 CPU 利用率被分为两批，这两批机器利用率相差约 10% 左右，但是整个集群中机器的 CPU 核数完全相同，部署的应用也完全相同，流量也是一样的，理论上 CPU 利用率应该相同。
 
-![图1、集群机器 CPU 利用率](./why-cpu-untilization-are-different/01_集群机器_CPU_利用率.png)
+![图1、集群机器 CPU 利用率](./why-cpu-untilization-different/01_集群机器_CPU_利用率.png)
 
 ## 0x02 排查过程
 
@@ -31,15 +31,15 @@ draft: false
 
 最简单的办法是确认一下基础指标是否有明显异常。
 
-![图2、机器其它基础指标](./why-cpu-untilization-are-different/02_机器其它基础指标.png)
+![图2、机器其它基础指标](./why-cpu-untilization-different/02_机器其它基础指标.png)
 
 深入查看 CPU 详情，发现是用户态 CPU 利用率差距比较到。
 
-![图3、CPU 占用信息](./why-cpu-untilization-are-different/03_CPU_占用信息.png)
+![图3、CPU 占用信息](./why-cpu-untilization-different/03_CPU_占用信息.png)
 
 再次查看网络流量，发现没有什么流量没有出现分层的情况，通过找开发同学确认，调用方请求也是轮询，不会存在流量不均衡的情况。
 
-![图4、网络流量](./why-cpu-untilization-are-different/04_网络流量.png)
+![图4、网络流量](./why-cpu-untilization-different/04_网络流量.png)
 
 后续排查中断、上下文指标等也未发现任何异常。
 
@@ -47,7 +47,7 @@ draft: false
 
 首先要确认的就是 CPU 的方方面面是否相同，包括 CPU、CPU 频率、L1 cache、L2 cache等。通过 `lscpu` 命令可以获取 CPU 的详细信息。
 
-![图5、CPU 详情](./why-cpu-untilization-are-different/05_CPU_详情.png)
+![图5、CPU 详情](./why-cpu-untilization-different/05_CPU_详情.png)
 
 通过统计所有机器的 CPU 信息，确认它们配置全部相同，包括 CPU 型号等均为相同。
 
@@ -65,13 +65,13 @@ draft: false
 ps -efT | grep <service_prog> | wc -l
 ```
 
-![图6、程序进程、线程数量](./why-cpu-untilization-are-different/06_程序进程、线程数量.png)
+![图6、程序进程、线程数量](./why-cpu-untilization-different/06_程序进程、线程数量.png)
 
 ### 2.4 绑核确认
 
 上面的 CPU 信息确认中可以看到机器有 2 个 numa 节点，为了提升程序性能（减少跨 numa 节点调度访问带来的性能下降），每台机器上会开 2 个进程，并进行绑核操作。通过 `taskset` 和 `numactl` 命令获取所有机器绑核信息和 numa 节点信息，确认所有机器绑核信息相同。
 
-![图7、numa 和绑核信息](./why-cpu-untilization-are-different/07_numa_和绑核信息.png)
+![图7、numa 和绑核信息](./why-cpu-untilization-different/07_numa_和绑核信息.png)
 
 自此，能排查的点都已经排查、确认了，并且都确认没有问题。
 
@@ -79,9 +79,9 @@ ps -efT | grep <service_prog> | wc -l
 
 能确认的信息都确认了，只能尝试使用 `perf` 去追踪两批机器中程序的性能信息并渲染为火焰图分析，两批机器出来的火焰图差别不是非常大，基本上也没有太大收获。排查一时陷入了停滞。
 
-![图8、CPU 利用率较高机器](./why-cpu-untilization-are-different/08_CPU_利用率较高机器.png)
+![图8、CPU 利用率较高机器](./why-cpu-untilization-different/08_CPU_利用率较高机器.png)
 
-![图9、CPU 利用率较低机器](./why-cpu-untilization-are-different/09_CPU_利用率较低机器.png)
+![图9、CPU 利用率较低机器](./why-cpu-untilization-different/09_CPU_利用率较低机器.png)
 
 ## 0x03 柳暗花明
 
@@ -97,11 +97,11 @@ lshw -short -C memory | grep DDR
 
 如下，机器中有 8 条 32G 2933 MHz的 DDR4 内存，相当于此机器内存为 8*32G=256G 内存。
 
-![图10、内存详情](./why-cpu-untilization-are-different/10_内存详情.png)
+![图10、内存详情](./why-cpu-untilization-different/10_内存详情.png)
 
 然后统计所有机器的内存信息，并结合机器的 CPU 利用率，发现单条内存的配置相同，但是不同机器内存条数量不同，CPU 利用率跟内存条数量有直接的关联。
 
-![图11、集群内存与 CPU 利用率关系](./why-cpu-untilization-are-different/11_集群内存与_CPU_利用率关系.png)
+![图11、集群内存与 CPU 利用率关系](./why-cpu-untilization-different/11_集群内存与_CPU_利用率关系.png)
 
 其实这一点在一开始统计机器配置的时候就应该发现的，但因为 CPU 利用率的问题忽略了对内存信息的确认。
 
@@ -119,7 +119,7 @@ perf stat -a -p $(pidof <service_prog> | tr ' ' ,) -- sleep 30
 
 获取所有机器 IPC 数据和利用率数据后，将结果中的 IPC 指标抽取出来，但此时获取的 IPC 指标是 0.58～0.7 之间的数值，虽然可以看出差距，但是为了更加便于区分，我们将 IPC 值标从高到底排序并取最大值及其对应的 CPU 利用率，然后对比其它行与这两个指标的波动比率。结果统计如下：
 
-![图12、IPC 与利用率关系](./why-cpu-untilization-are-different/12_IPC_与利用率关系.png)
+![图12、IPC 与利用率关系](./why-cpu-untilization-different/12_IPC_与利用率关系.png)
 
 从上图可以很清楚的看到内存大小与 CPU 的利用率及 IPC 都有非常强的关联。自此基本上可以确定 CPU 利用率的不同就是内存导致的，但是为什么呢？
 
@@ -127,9 +127,9 @@ perf stat -a -p $(pidof <service_prog> | tr ' ' ,) -- sleep 30
 
 根据 Brendan Gregg 的解释，应该是 CPU 在等待内存IO的响应导致的，但系统没有相关衡量内存 IO 及延迟的指标，不过我们可以测量内存带宽，看两个带宽是否相同。通过 Google 发现 intel 提供了一款名为 mlc（[memory latency checker](https://www.intel.com/content/www/us/en/developer/articles/tool/intelr-memory-latency-checker.html)）的工具，对两批机器的测量结果，发现两批机器的带宽存在较大差距，符合之前的猜测。
 
-![图13、大内存带宽](./why-cpu-untilization-are-different/13_大内存带宽.png)
+![图13、大内存带宽](./why-cpu-untilization-different/13_大内存带宽.png)
 
-![图14、小内存带宽](./why-cpu-untilization-are-different/14_小内存带宽.png)
+![图14、小内存带宽](./why-cpu-untilization-different/14_小内存带宽.png)
 
 回到最初的问题，最好的办法其实是拔掉多余的内存条观察CPU利用率是否会上升，但由于不具备此条件，只能通过猜测、验证的方式来得出结论。
 
