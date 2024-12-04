@@ -45,7 +45,6 @@ path = 'page'
   description = "为梦想添砖加瓦"
   mainSections = ["posts"]
   intro = false
-  disqusShortname = "kdefan"
 
 [markup]
   defaultMarkdownHandler = "goldmark"
@@ -75,14 +74,6 @@ path = 'page'
 
     [markup.goldmark.renderer]
       unsafe = true
-
-[privacy.disqus]
-  disable = false
-
-[privacy.googleAnalytics]
-  anonymizeIP = true
-  respectDoNotTrack = false
-  useSessionStorage = false
 
 [menu]
   [[menu.main]]
@@ -124,3 +115,20 @@ path = 'page'
   changefreq = 'always'
   filename = 'sitemap.xml'
   priority = 0.5
+
+# https://gohugo.io/about/privacy/
+[privacy]
+  [privacy.disqus]
+    disable = false
+  [privacy.googleAnalytics]
+    disable = false
+    anonymizeIP = true
+    respectDoNotTrack = false
+    useSessionStorage = false
+
+# https://gohugo.io/templates/embedded/#disqus
+[services]
+  [services.disqus]
+    shortname = "kdefan"
+  [services.googleAnalytics]
+    id = "G-5PZT6MYW8X"
