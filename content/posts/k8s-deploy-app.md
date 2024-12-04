@@ -1,6 +1,8 @@
 ---
 title: Kubernetes折腾记：部署应用
 slug: k8s-deploy-app
+aliases:
+    - /posts/k8s-deploy-app
 date: 2021-01-30T22:17:00+08:00
 tags: ['kubernetes', '云原生']
 category: ['云原生']

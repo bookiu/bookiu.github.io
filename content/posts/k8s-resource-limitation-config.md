@@ -1,6 +1,8 @@
 ---
 title: "k8s中资源限制配置"
 slug: k8s-resource-limitation-config
+aliases:
+    - /posts/k8s-resource-limitation-config
 description: ""
 date: 2023-11-23T15:37:37+08:00
 tags: ['kubernetes', '云原生']

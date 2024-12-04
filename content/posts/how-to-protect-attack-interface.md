@@ -1,6 +1,8 @@
 ---
 title: 应对接口攻击的一种方案
 slug: how-to-protect-attack-interface
+aliases:
+    - /posts/how-to-protect-attack-interface
 description: ""
 date: 2023-11-18T18:45:22+08:00
 tags: ['redis', 'golang']

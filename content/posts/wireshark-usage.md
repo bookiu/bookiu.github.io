@@ -1,6 +1,8 @@
 ---
 title: wireshark 使用总结
 slug: wireshark-usage
+aliases:
+    - /posts/wireshark-usage
 description: wireshark 使用总结
 date: 2024-03-02T13:40:07+08:00
 tags:

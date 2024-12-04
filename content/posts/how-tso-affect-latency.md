@@ -1,6 +1,8 @@
 ---
 title: "TSO 对延迟的影响"
 slug: how-tso-affect-latency
+aliases:
+    - /posts/how-tso-affect-latency
 description: "TSO 对延迟的影响"
 date: 2024-12-03T10:34:50+08:00
 tags: ["网络"]

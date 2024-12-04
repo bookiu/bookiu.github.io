@@ -115,17 +115,3 @@ jobs:
         with:
           name: github-pages
           path: ./public
-      - name: Unarchive artifact
-        run: |
-          tar -xvf ./public/artifact.tar -C ./public/
-          rm ./public/artifact.tar
-      - name: Rsync deployments
-        uses: burnett01/rsync-deployments@7.0.1
-        with:
-          switches: -avzh --delete
-          path: ./public/
-          remote_host: ${{ secrets.DEPLOY_SERVER_HOST }}
-          remote_port: ${{ secrets.DEPLOY_SERVER_PORT }}
-          remote_user: ${{ secrets.DEPLOY_SERVER_USER }}
-          remote_key: ${{ secrets.DEPLOY_SERVER_KEY }}
-          remote_path: /data/release/kdefan.net/

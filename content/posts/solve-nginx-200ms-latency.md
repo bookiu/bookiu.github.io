@@ -1,6 +1,8 @@
 ---
 title: "一个诡异的 200ms 延迟问题排查过程"
 slug: solve-nginx-200ms-latency
+aliases:
+    - /posts/solve-nginx-200ms-latency
 description: ""
 date: 2024-01-10T16:40:07+08:00
 tags: ["网络", "wireshark"]

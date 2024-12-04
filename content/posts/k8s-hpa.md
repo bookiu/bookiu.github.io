@@ -1,6 +1,8 @@
 ---
 title: k8s中的HPA
 slug: k8s-hpa
+aliases:
+    - /posts/k8s-hpa
 date: 2023-12-05T21:49:00+08:00
 tags: ['kubernetes', '云原生']
 category: ['云原生']

@@ -1,6 +1,8 @@
 ---
 title: 如何更好的输出应用日志
 slug: better-app-log
+aliases:
+    - /posts/better-app-log
 date: 2022-11-26T21:00:00+08:00
 tags: ["日志"]
 categories: ["开发"]

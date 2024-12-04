@@ -1,6 +1,8 @@
 ---
 title: Linux下检测端口是否打开
 slug: linux-port-open-check
+aliases:
+    - /posts/linux-port-open-check
 date: 2021-01-06T11:50:00+08:00
 tags: ['linux', 'wireshark']
 categories: ['网络']

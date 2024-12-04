@@ -1,6 +1,8 @@
 ---
 title: Kubernete折腾记：对外暴露服务
 slug: k8s-expose-svc
+aliases:
+    - /posts/k8s-expose-svc
 date: 2021-02-08T22:05:00+08:00
 tags: ['kubernetes', '云原生']
 category: ['云原生']

@@ -1,6 +1,8 @@
 ---
 title: 为什么一个容器推荐只运行一个应用
 slug: one-container-one-app
+aliases:
+    - /posts/one-container-one-app
 date: 2021-03-05T14:20:00+08:00
 tags: ['docker', 'kubernetes', '容器']
 categories: ['devops']

@@ -5,10 +5,10 @@ timeZone = "Asia/Shanghai"
 theme = "paper"
 copyright = ""
 googleAnalytics = "G-5PZT6MYW8X"
-disqusShortname = "kdefan"
 pygmentsUseClasses = true
 pygmentsCodefences = true
 
+# https://gohugo.io/content-management/urls/#appearance
 uglyURLs = true
 summaryLength = 10
 
@@ -26,9 +26,11 @@ disableKinds = []
 # https://gohugo.io/getting-started/configuration/#enablerobotstxt
 enableRobotsTXT = false
 
-# https://gohugo.io/getting-started/configuration/#paginatepath
-paginate = 10
-paginatePath = "page"
+# https://gohugo.io/templates/pagination/#configuration
+[pagination]
+disableAliases = false
+pagerSize = 10
+path = 'page'
 
 [data]
   [data.author]
@@ -43,6 +45,7 @@ paginatePath = "page"
   description = "为梦想添砖加瓦"
   mainSections = ["posts"]
   intro = false
+  disqusShortname = "kdefan"
 
 [markup]
   defaultMarkdownHandler = "goldmark"
@@ -109,13 +112,15 @@ paginatePath = "page"
   series = "series"
   tag = "tags"
 
-# https://gohugo.io/content-management/urls/#tokens
+# https://gohugo.io/content-management/urls/#permalinks
 [permalinks]
-  posts = "/posts/:slug"
-  tags = '/tags/:title'
+  [permalinks.page]
+    posts = "/posts/:year/:month/:slug"
+  [permalinks.term]
+    tags = '/tags/:title'
 
 # https://gohugo.io/templates/sitemap-template/#configuration
 [sitemap]
-  changefreq = 'monthly'
+  changefreq = 'always'
   filename = 'sitemap.xml'
   priority = 0.5

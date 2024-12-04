@@ -1,6 +1,8 @@
 ---
 title: CPU 利用率为什么不相同
 slug: why-cpu-untilization-different
+aliases:
+    - /posts/why-cpu-untilization-different
 description: 通过各种手段排查确认 CPU 利用率不同的原因
 date: 2024-09-12T22:40:07+08:00
 tags:

@@ -1,6 +1,8 @@
 ---
 title: k8s 应用镜像构建最佳实践
 slug: k8s-build-image-best-practice
+aliases:
+    - /posts/k8s-build-image-best-practice
 description: ""
 date: 2023-11-21T14:49:20+08:00
 tags: ['kubernetes', '云原生']

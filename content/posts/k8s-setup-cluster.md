@@ -1,6 +1,8 @@
 ---
 title: Kubernetes折腾记：搭建集群
 slug: k8s-setup-cluster
+aliases:
+    - /posts/k8s-setup-cluster
 date: 2020-03-30T19:56:00+08:00
 tags: ['kubernetes', '云原生']
 category: ['云原生']

@@ -1,6 +1,8 @@
 ---
 title: Hyper-V虚拟机连接外网方案
 slug: hyperv-connect-internet
+aliases:
+    - /posts/hyperv-connect-internet
 date: 2021-01-11T22:36:00+08:00
 tags: ['网络']
 categories: ['网络']

@@ -1,6 +1,8 @@
 ---
 title: MySQL中的Threads线程相关指标解读
 slug: mysql-threads-metrics
+aliases:
+    - /posts/mysql-threads-metrics
 date: 2023-05-08T09:40:00+08:00
 tags: ['mysql']
 categories: []

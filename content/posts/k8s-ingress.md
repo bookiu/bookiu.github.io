@@ -1,6 +1,8 @@
 ---
 title: Kubernetes折腾记4：ingress部署及使用
 slug: k8s-ingress
+aliases:
+    - /posts/k8s-ingress
 date: 2021-03-04T21:49:00+08:00
 tags: ['kubernetes', '云原生']
 category: ['云原生']

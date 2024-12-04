@@ -1,6 +1,8 @@
 ---
 title: Nginx内部跳转引发的问题
 slug: nginx-internal-redirect
+aliases:
+    - /posts/nginx-internal-redirect
 date: 2021-01-01T10:54:00+08:00
 tags: ['nginx']
 categories: ['devops']

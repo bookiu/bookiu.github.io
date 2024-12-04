@@ -1,6 +1,8 @@
 ---
 title: 通过抓包看MySQL与程序编码
 slug: mysql-encoding
+aliases:
+    - /posts/mysql-encoding
 date: 2021-01-05T14:33:00+08:00
 tags: ['mysql', 'php', 'python', 'wireshark', '编码']
 categories: ['devops']

@@ -1,6 +1,8 @@
 ---
 title: 什么是胶水记录
 slug: what-is-glue-records
+aliases:
+    - /posts/what-is-glue-records
 description: ""
 date: 2023-11-27T17:20:34+08:00
 tags: ["域名"]

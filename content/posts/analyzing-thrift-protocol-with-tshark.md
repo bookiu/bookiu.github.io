@@ -1,6 +1,10 @@
 ---
 title: tshark 分析 thrift 延迟
 slug: analyzing-thrift-protocol-with-tshark
+aliases:
+    - /posts/analyzing-thrift-protocol-with-tshark
+aliases:
+    - /posts/analyzing-thrift-protocol-with-tshark
 description: 使用 tshark 分析 thrift 延迟
 date: 2024-01-30T13:40:07+08:00
 tags:

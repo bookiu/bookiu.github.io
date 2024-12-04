@@ -1,6 +1,8 @@
 ---
 title: Nginx输出JSON格式日志
 slug: nginx-json-log
+aliases:
+    - /posts/nginx-json-log
 date: 2019-03-04T10:34:00+08:00
 tags: ['nginx']
 categories: ['devops']

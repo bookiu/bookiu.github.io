@@ -1,6 +1,8 @@
 ---
 title: 网络问题初查
 slug: check-network-packetlost-delay-problem
+aliases:
+    - /posts/check-network-packetlost-delay-problem
 description: "网络问题初查"
 date: 2024-04-28T19:33:54+08:00
 tags: ["网络", "wireshark", "ebpf"]

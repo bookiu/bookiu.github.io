@@ -1,6 +1,8 @@
 ---
 title: 系统安全加固技术方案
 slug: sysetem-security-plan
+aliases:
+    - /posts/sysetem-security-plan
 date: 2022-11-25T18:25:00+08:00
 tags: ["安全"]
 category: ["安全"]

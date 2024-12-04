@@ -1,6 +1,8 @@
 ---
 title: tshark 定位重传导致高延迟数据包
 slug: tshark-locate-high-latency-retrans-packet
+aliases:
+    - /posts/tshark-locate-high-latency-retrans-packet
 description: "网络问题初查"
 date: 2024-04-28T19:33:54+08:00
 tags: ["网络", "wireshark", "tshark", "python"]
