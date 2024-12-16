@@ -107,6 +107,7 @@ path = 'page'
 [permalinks]
   [permalinks.page]
     posts = "/posts/:year/:month/:slug"
+    lifes = "/lifes/:year/:month/:slug"
   [permalinks.term]
     tags = '/tags/:title'
 

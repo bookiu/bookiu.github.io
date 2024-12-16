@@ -1,6 +1,6 @@
 ---
 title: "为什么32位CPU最大支持4G内存"
-slug: "why-32bit-cpu-maximum-4gb-mem"
+slug: why-32bit-cpu-maximum-4gb-mem
 aliases:
     - /posts/why-32bit-cpu-maximum-4gb-mem
 date: 2023-06-15T21:19:26+08:00
