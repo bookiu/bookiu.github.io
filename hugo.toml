@@ -1,5 +1,5 @@
 title = "SRE Work"
-languageCode = "zh-CN"
+locale = "zh-CN"
 baseURL = "https://kdefan.net"
 timeZone = "Asia/Shanghai"
 theme = "paper"
@@ -85,7 +85,7 @@ path = 'page'
     name = "归档"
     identifier = "blog"
     weight = 2
-    url = "/posts.html"
+    pageRef = "/posts"
   [[menu.main]]
     name = "关于"
     identifier = "about"

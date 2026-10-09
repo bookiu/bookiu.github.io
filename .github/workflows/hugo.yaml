@@ -35,7 +35,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.139.3
+      HUGO_VERSION: 0.166.0
     steps:
       - name: Generate version
         id: build_version
